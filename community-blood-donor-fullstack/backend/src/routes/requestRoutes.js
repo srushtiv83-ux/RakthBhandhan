@@ -1,0 +1,1 @@
+import {Router} from "express";import {createRequest,listRequests,updateStatus} from "../controllers/requestController.js";import {auth} from "../middleware/authMiddleware.js";const r=Router();r.post("/",auth,createRequest);r.get("/",listRequests);r.put("/:id/status",auth,updateStatus);export default r;
