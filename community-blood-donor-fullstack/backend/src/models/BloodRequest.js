@@ -1,0 +1,3 @@
+import mongoose from "mongoose";
+const schema=new mongoose.Schema({requesterId:{type:mongoose.Schema.Types.ObjectId,ref:"User"},bloodGroup:{type:String,required:true},units:{type:Number,required:true},hospital:{type:String,required:true},location:String,latitude:Number,longitude:Number,urgency:{type:String,default:"Emergency"},status:{type:String,enum:["PENDING","DONOR_FOUND","DONOR_ACCEPTED","ON_THE_WAY","AT_HOSPITAL","COMPLETED","CANCELLED"],default:"PENDING"},assignedDonorId:{type:mongoose.Schema.Types.ObjectId,ref:"Donor"}},{timestamps:true});
+export default mongoose.model("BloodRequest",schema);
