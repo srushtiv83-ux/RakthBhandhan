@@ -1,0 +1,1 @@
+import {Router} from "express";import {donors,availability,updateLocation} from "../controllers/donorController.js";import {auth} from "../middleware/authMiddleware.js";const r=Router();r.get("/",donors);r.put("/availability",auth,availability);r.put("/location",auth,updateLocation);export default r;
